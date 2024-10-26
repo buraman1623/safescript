@@ -1,0 +1,18 @@
+2024-10-26 14:05:01 - ERROR - Error fetching http://example.com: 404 Not Found
+2024-10-26 14:05:02 - INFO - Detected Potential XSS Vulnerabilities: {
+    'stored_xss': [{
+        'type': 'Stored XSS in form field',
+        'field': 'username',
+        'form_action': '/submit'
+    }],
+    'reflected_xss': [{
+        'type': 'Reflected XSS in URL',
+        'url': "http://example.com/?name=<script>alert('xss')</script>"
+    }],
+    'dom_based_xss': [{
+        'type': 'Potential DOM-based XSS in attribute',
+        'element': 'div',
+        'attribute': 'onmouseover',
+        'value': "alert('xss')"
+    }]
+}
